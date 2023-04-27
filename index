@@ -1,0 +1,55 @@
+const inquirer = require ('inquirer')
+const generateLogo = require("./utils/generateLogo")
+
+/* inquire.prompt ([
+	{
+		name:
+		message:
+		type:
+		validate: (text) => if (text.length <3)
+	}
+]) */
+
+// Array of Questions for User Input
+// txt 3 characters, txt color, shape, shape color
+
+const questions = [
+	{
+		name: 'logo',
+		message: 'Text for Logo',
+		type: 'input'
+	},
+
+	{
+		name: 'textColor',
+		message: 'Color for Text',
+		type: 'input'
+	},
+
+	{
+		name: 'shape',
+		message: 'Shape of Logo',
+		type: 'list',
+		choices: ["Circle", "Square", "Triangle",]
+	},
+
+	{
+		name: 'color',
+		message: 'Color of Logo',
+		type: 'input'
+	}
+]
+
+// function to create logo
+
+const fs = require ('fs');
+function createLogo(fileName, data) {
+	inquirer.prompt(questions)
+}
+
+// initialize function
+
+function init() {
+	inquirer.prompt(questions).then(res => {
+    generateLogo("logo.svg", generateLogo(res))
+    console.log(res)})
