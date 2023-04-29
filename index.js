@@ -1,19 +1,6 @@
 const inquirer = require('inquirer')
 const { Circle, Triangle, Square } = require("./lib/shapes")
 
-
-/* inquire.prompt ([
-	{
-		name:
-		message:
-		type:
-		validate: (text) => if (text.length <3)
-	}
-]) */
-
-// Array of Questions for User Input
-// txt 3 characters, txt color, shape, shape color
-
 const questions = [
 	{
 		name: 'logo',
